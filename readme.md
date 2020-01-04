@@ -19,11 +19,11 @@ Pipeline built in Jenkins for the Spring project: ```https://github.com/spring-p
 ```sudo ./start.sh```
 </br><b>Note:</b> this takes time, due to the download folder of 'jenkins_home'; it contains all the necessary configurations (job, plugins, etc) for the project to be initialized without manually installing Jenkins.
 
-3) Browse into ```localhost:8080``` and insert the following username & password:
+4) Browse into ```localhost:8080``` and insert the following username & password:
 - <b>username:</b> 'admin'.
 - <b>password:</b> run ```docker exec jenkins-docker cat /var/jenkins_home/secrets/initialAdminPassword``` in the Terminal and insert the output you see.
 
-4) Go into the 'spring-petclinic-hub' job, and click on 'Build now'.</br>
+5) Go into the 'spring-petclinic-hub' job, and click on 'Build now'.</br>
 Open BlueOcean and follow the pipeline. When it is done (<b>it takes more then 15 minutes, the 'Compile' step takes time</b>) it should look like that:
 
 <img src="https://i.ibb.co/5GjpB5s/Screen-Shot-2020-01-04-at-19-34-58.png" align="center" height="148" width="888" >

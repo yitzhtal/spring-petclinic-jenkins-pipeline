@@ -24,7 +24,7 @@ Pipeline built in Jenkins for the Spring project: ```https://github.com/spring-p
 - <b>password:</b> run ```docker exec jenkins-docker cat /var/jenkins_home/secrets/initialAdminPassword``` in the Terminal and insert the output you see.
 
 4) Go into the 'spring-petclinic-hub' job, and click on 'Build now'.</br>
-Open BlueOcean and follow the pipeline. When it is done (<b> it takes more then 15 minutes, the 'Compile' step takes time) it should look like that:
+Open BlueOcean and follow the pipeline. When it is done (<b>it takes more then 15 minutes, the 'Compile' step takes time</b>) it should look like that:
 
 <img src="https://i.ibb.co/5GjpB5s/Screen-Shot-2020-01-04-at-19-34-58.png" align="center" height="148" width="888" >
 

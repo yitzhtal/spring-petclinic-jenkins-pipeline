@@ -20,7 +20,7 @@ Pipeline built in Jenkins for the Spring project: ```https://github.com/spring-p
 - ```chmod 755 *.sh```
 
 3) Run a containerized Docker & Jenkins environemnt using (please provide your password when prompted):</br>
-```sudo ./start.sh```
+```./start.sh```
 </br><b>Note:</b> this takes time, due to the download folder of 'jenkins_home'; it contains all the necessary configurations (job, plugins, etc) for the project to be initialized without manually installing Jenkins.
 
 4) Browse into ```localhost:8080``` and insert the following username & password:

@@ -42,7 +42,8 @@ Pull the latest petclinic-container image from the dockerhub repository:</br>
 Run the container using:</br>
 ```docker run -d --name petclinic-container -p 8181:8181 tyitzhak/spring-petclinic-hub:latest```
 
-Go into ```localhost:8181```. Your application is now READY! :)
+Go into ```localhost:8181``` (it takes about ~10 seconds until the application is up). </br>
+Your application is now READY! :)
 
 <img src="https://i.ibb.co/sFsLDvf/Screen-Shot-2020-01-05-at-1-14-53.png" align="center" height="308" width="688" >
 

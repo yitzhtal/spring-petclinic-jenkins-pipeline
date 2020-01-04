@@ -35,7 +35,10 @@ Open BlueOcean and follow the pipeline. When it is done (<b>it takes more then 1
 ## How to use the Runnable Docker Image?
 The runnable docker image is stored at tyitzhak/spring-petclinic-hub:latest.
 
-Just run it using the following command:</br>
+Pull the latest petclinic-container image from the dockerhub repository:</br>
+```docker pull tyitzhak/spring-petclinic-hub:latest```
+
+Run the container using:</br>
 ```docker run -d --name petclinic-container -p 8181:8181 tyitzhak/spring-petclinic-hub:latest```
 
 Go into ```localhost:8181```. Your application is now READY! :)

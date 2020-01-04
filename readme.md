@@ -7,9 +7,13 @@ Pipeline built in Jenkins for the Spring project: ```https://github.com/spring-p
 - 'spring-petclinic-hub' repository is where all the runnable images are stored: https://hub.docker.com/repository/docker/tyitzhak/spring-petclinic-hub.
 - 'jenkins-docker' repository is where all the containers with jenkins and docker installed are stored: https://hub.docker.com/repository/docker/tyitzhak/jenkins-docker.
 
+## Prerequisites
+- ```brew install wget```, if wget is not installed on your computer.
+- Docker installed.
+
 ## Running the Project
 
-1) Clone the project: ```git clone https://github.com/talitz/spring-petclinic-jenkins-pipeline.git```.
+1) Clone the project: <br>```git clone https://github.com/talitz/spring-petclinic-jenkins-pipeline.git```
 
 2) CD into the project and provide permissions to the shell running scripts:</br>
 - ```cd spring-petclinic-jenkins-pipeline```

@@ -8,7 +8,7 @@ Pipeline built in Jenkins for the Spring project: ```https://github.com/spring-p
 - 'jenkins-docker' repository is where all the containers with jenkins and docker installed are stored: https://hub.docker.com/repository/docker/tyitzhak/jenkins-docker.
 
 ## Prerequisites
-- ```brew install wget```, if wget is not installed on your computer.
+- Install wget using brew: ```brew install wget```.
 - Docker installed.
 
 ## Running the Project

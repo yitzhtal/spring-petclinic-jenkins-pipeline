@@ -5,10 +5,14 @@ wget -O jenkins_home.zip https://dl.dropboxusercontent.com/s/o13g19ok5zi4ega/jen
 sudo unzip -X -o jenkins_home.zip                                  && \
 rm jenkins_home.zip
 
-sudo chown -R "$(whoami)" ~/spring-petclinic-jenkins-pipeline/jenkins_home
+JENKINS_HOME_PATH=$(find $(pwd)/jenkins_home -maxdepth 0 -type d)
+
+sudo chown -R $(whoami) $JENKINS_HOME_PATH
 
 # Run the jenkins-docker container, with mount to jenkins_home; on port 8080
+# Relative path was not used in Mount; therefore find command was used to find
+# the full path of the jenkins_home folder
 docker run --name jenkins-docker \
  -u root -p 8080:8080 -v /var/run/docker.sock:/var/run/docker.sock \
- -v ~/spring-petclinic-jenkins-pipeline/jenkins_home:/var/jenkins_home \
+ -v $JENKINS_HOME_PATH:/var/jenkins_home \
  tyitzhak/jenkins-docker:latest

@@ -7,4 +7,4 @@ EXPOSE 8087
 COPY target/spring-petclinic-2.2.0.BUILD-SNAPSHOT.jar /spring-petclinic.jar
 
 # run application with this command line 
-ENTRYPOINT ["java","-jar","/spring-petclinic.java"]
+ENTRYPOINT ["java","-jar","/spring-petclinic.jar"]

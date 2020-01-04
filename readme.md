@@ -43,6 +43,8 @@ Run the container using:</br>
 
 Go into ```localhost:8181```. Your application is now READY! :)
 
+<img src="https://i.ibb.co/sFsLDvf/Screen-Shot-2020-01-05-at-1-14-53.png" align="center" height="548" width="888" >
+
 You can run the container's shell using:</br>
 ```docker exec -it petclinic-container sh```
 

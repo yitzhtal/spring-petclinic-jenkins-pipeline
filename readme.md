@@ -32,7 +32,7 @@ Open BlueOcean and follow the pipeline. When it is done it should look like that
 The runnable docker image is stored at tyitzhak/spring-petclinic-hub:latest.
 
 Just run it using the following command:</br>
-```docker run -d --name petclinic-container -p 8080:8080 tyitzhak/spring-petclinic-hub:latest```
+```docker run -d --name petclinic-container -p 8087:8087 tyitzhak/spring-petclinic-hub:latest```
 
 ## Terminate the Project
 Run ```sudo ./terminate.sh```.

@@ -32,6 +32,7 @@ Pipeline built in Jenkins for the Spring project: ```https://github.com/spring-p
 Open BlueOcean and follow the pipeline. When it is done (<b>it takes more then 15 minutes, the 'Compile' step takes time</b>) it should look like that:
 
 <img src="https://i.ibb.co/5GjpB5s/Screen-Shot-2020-01-04-at-19-34-58.png" align="center" height="148" width="888" >
+</br><b>Note:</b> If one of the stages fails, due to connection/unrelated issues, re-run the stage in Jenkins (shouldn't happen, but just in case).
 
 ## How to use the Runnable Docker Image?
 The runnable docker image is stored at tyitzhak/spring-petclinic-hub:latest.

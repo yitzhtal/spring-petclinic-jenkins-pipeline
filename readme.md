@@ -51,4 +51,4 @@ You can run the container's shell using:</br>
 ```docker exec -it petclinic-container sh```
 
 ## Terminate the Project
-Run ```sudo ./terminate.sh```.
+Run ```./terminate.sh```.

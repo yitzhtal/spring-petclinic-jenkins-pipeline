@@ -14,3 +14,5 @@ docker run --name jenkins-docker \
  -u root -p 8080:8080 -v /var/run/docker.sock:/var/run/docker.sock \
  -v "$(find $(pwd)/jenkins_home -maxdepth 0 -type d)":/var/jenkins_home \
  tyitzhak/jenkins-docker:latest
+
+docker run --name artifactory -d -p 8081:8081 docker.bintray.io/jfrog/artifactory-pro:latest

@@ -37,12 +37,31 @@ pipeline {
         }
       }
     }
-    stage('Deploy Image') {
+    /* 
+    stage('Deploy Image to DockerHub') {
       steps{
          script {
             docker.withRegistry( '', registryCredential ) {
             dockerImage.push()
-          }
+            }
+        }
+      }
+    }
+    */ 
+    stage('Deploy Image to Artifactory') {
+      steps{
+         script {
+              rtUpload (
+                  serverId: 'art-1',
+                  spec: '''{
+                        "files": [
+                          {
+                            "pattern": "spring-petclinic",
+                            "target": "spring-petclinic-hub/"
+                          }
+                       ]
+                      }'''
+              )
         }
       }
     }

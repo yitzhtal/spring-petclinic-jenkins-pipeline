@@ -56,7 +56,7 @@ pipeline {
             rtServer (
                 id: "ARTIFACTORY_SERVER",
                 url: "http://localhost:8081/artifactory",
-                credentialsId: 'admin.jfrog'
+                credentialsId: 'maven-deployer'
             )
            // specify the repositories to be used for deploying the artifacts in the Artifactory
             rtMavenDeployer (

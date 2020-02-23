@@ -66,12 +66,12 @@ pipeline {
                 snapshotRepo: "spring-petclinic-snapshot-local"
             )
             // defines the dependencies resolution details
-            rtMavenResolver (
-                id: "MAVEN_RESOLVER",
-                serverId: "ARTIFACTORY_SERVER",
-                releaseRepo: "spring-petclinic-release",
-                snapshotRepo: "spring-petclinic-snapshot"
-            )
+            //rtMavenResolver (
+            //    id: "MAVEN_RESOLVER",
+            //    serverId: "ARTIFACTORY_SERVER",
+            //    releaseRepo: "spring-petclinic-release",
+            //    snapshotRepo: "spring-petclinic-snapshot"
+            //)
         }
     }
     stage ('Build & Upload Artifact') {

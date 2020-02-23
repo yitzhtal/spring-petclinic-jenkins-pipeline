@@ -55,7 +55,7 @@ pipeline {
             // specify Artifactory server
             rtServer (
                 id: "ARTIFACTORY_SERVER",
-                url: "http://artifactory:8081/artifactory",
+                url: "http://localhost:8081/artifactory",
                 credentialsId: 'admin.jfrog'
             )
            // specify the repositories to be used for deploying the artifacts in the Artifactory

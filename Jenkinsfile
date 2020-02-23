@@ -55,7 +55,7 @@ pipeline {
             // specify Artifactory server
             rtServer (
                 id: "ARTIFACTORY_SERVER",
-                url: "http://localhost:8081/artifactory",
+                url: "http://172.17.0.2:8081/artifactory",
                 credentialsId: 'maven-deployer'
             )
            // specify the repositories to be used for deploying the artifacts in the Artifactory

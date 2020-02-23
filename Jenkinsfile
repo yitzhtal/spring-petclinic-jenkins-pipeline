@@ -6,7 +6,7 @@ pipeline {
   }
   agent any
   tools {
-    maven 'maven3.6'
+    maven 'Maven 3.3.9'
     jdk 'jdk8'
   } 
   stages {
@@ -20,8 +20,6 @@ pipeline {
          sh 'mvn compile' //only compilation of the code
        }
     }
-    
-    /*
     stage('Test') {
       steps {
         sh '''
@@ -39,58 +37,19 @@ pipeline {
         }
       }
     }
-    stage('Deploy Image to DockerHub') {
+    stage('Deploy Image') {
       steps{
          script {
             docker.withRegistry( '', registryCredential ) {
             dockerImage.push()
-            }
+          }
         }
       }
     }
-    */
-
-    stage ('Artifactory configuration') {
-        steps {
-            // specify Artifactory server
-            rtServer (
-                id: "ARTIFACTORY_SERVER",
-                url: "http://172.17.0.2:8081/artifactory",
-                credentialsId: 'maven-deployer'
-            )
-           // specify the repositories to be used for deploying the artifacts in the Artifactory
-            rtMavenDeployer (
-                id: "MAVEN_DEPLOYER",
-                serverId: "ARTIFACTORY_SERVER",
-                releaseRepo: "spring-petclinic-release-local",
-                snapshotRepo: "spring-petclinic-snapshot-local"
-            )
-            // defines the dependencies resolution details
-            rtMavenResolver (
-                id: "MAVEN_RESOLVER",
-                serverId: "ARTIFACTORY_SERVER",
-                releaseRepo: "spring-petclinic-release",
-                snapshotRepo: "spring-petclinic-snapshot"
-            )
-        }
-    }
-    stage ('Build & Upload Artifact') {
-        steps {
-            rtMavenRun (
-                tool: "maven3.6", 
-                pom: 'pom.xml',
-                goals: 'clean install',
-                deployerId: "MAVEN_DEPLOYER",
-                resolverId: "MAVEN_RESOLVER"
-            )
-        }
-    }
-    stage ('Publish build info') {
-        steps {
-            rtPublishBuildInfo (
-                serverId: "ARTIFACTORY_SERVER"
-            )
-        }
+    stage('Remove Unused docker image') {
+      steps{
+        sh "docker rmi $registry:latest"
+      }
     }
   }
 }

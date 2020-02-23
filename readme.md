@@ -1,4 +1,4 @@
-# Jenkins Pipeline for Spring-PetClinic Project (Deploy to DockerHub)
+# Jenkins Pipeline for Spring-PetClinic Project
 
 ## Introduction
 Pipeline built in Jenkins for the Spring project: ```https://github.com/spring-projects/spring-petclinic```.

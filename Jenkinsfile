@@ -30,33 +30,26 @@ pipeline {
         //if the code is compiled, we test and package it in its distributable format; run IT and store in local repository
       }
     }
-
-    stage ('Build docker image') {
-        steps {
-            script {
-                docker.build('http://localhost:8082/artifactory/docker/spring-petclinic-hub:latest', 'docker')
-            }
+    stage('Building Image') {
+      steps{
+        script {
+          dockerImage = docker.build registry + ":latest"
         }
+      }
     }
-
-    stage ('Push image to Artifactory') {
-        steps {
-            rtDockerPush(
-                serverId: "tal-local-arti",
-                image: 'http://localhost:8082/artifactory/docker' + '/spring-petclinic-hub:latest',
-                host: "http://172.17.0.3:8080",
-                targetRepo: 'docker',
-                properties: 'project-name=docker1;status=stable'
-            )
+    stage('Deploy Image') {
+      steps{
+         script {
+            docker.withRegistry( '', registryCredential ) {
+            dockerImage.push()
+          }
         }
+      }
     }
-
-    stage ('Publish build info') {
-        steps {
-            rtPublishBuildInfo (
-                serverId: "tal-local-arti"
-            )
-        }
+    stage('Remove Unused docker image') {
+      steps{
+        sh "docker rmi $registry:latest"
+      }
     }
   }
 }
